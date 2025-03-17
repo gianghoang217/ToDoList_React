@@ -102,6 +102,7 @@
         
         .logout-btn {
             background-color: #e74c3c;
+            width: 10%;
         }
         
         .logout-btn:hover {
