@@ -51,7 +51,7 @@ const TodoForm = ({ onAddTodo }) => {
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Add details..."
+            placeholder="Add details for your todo..."
             rows="3"
           />
         </div>
@@ -60,7 +60,7 @@ const TodoForm = ({ onAddTodo }) => {
           type="submit" 
           disabled={isSubmitting || !title.trim()}
         >
-          {isSubmitting ? 'Adding...' : 'Add Todo'}
+          {isSubmitting ? 'Adding your your todo...' : 'Add Todo'}
         </button>
       </form>
     </div>
