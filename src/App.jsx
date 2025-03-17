@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './contexts/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
+import Register from './components/Register';
 import TodoList from './components/TodoList';
 import './App.css';
 
@@ -12,15 +13,16 @@ function App() {
       <Router>
         <div className="app">
           <Routes>
-            <Route 
-              path="/" 
+            <Route
+              path="/"
               element={
                 <PrivateRoute>
                   <TodoList />
                 </PrivateRoute>
-              } 
+              }
             />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>

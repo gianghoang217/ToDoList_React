@@ -24,6 +24,15 @@ apiClient.interceptors.request.use(config => {
 
 // Auth Service
 export const authService = {
+
+    register: async(userData) => {
+        const response = await apiClient.post('register/', userData);
+        if (response.data && response.data.token) {
+            localStorage.setItem('token', response.data.token);
+        }
+        return response.data;
+    },
+
     login: async(credentials) => {
         const response = await apiClient.post('login/', credentials);
         // Store the token when login is successful
