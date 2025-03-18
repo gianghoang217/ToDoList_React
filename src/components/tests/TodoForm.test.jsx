@@ -26,7 +26,8 @@ describe('TodoForm', () => {
       target: { value: 'Test Todo' },
     });
     
-    fireEvent.submit(screen.getByRole('form'));
+    const submitButton = screen.getByText('Add Todo');
+    fireEvent.click(submitButton);
     
     expect(mockOnAddTodo).toHaveBeenCalledWith({
       title: 'Test Todo',
